@@ -82,7 +82,7 @@ public class Producto {
         String string = "";
         string+= "Identificador: "+identificador+" Codigo: "+codigo+" Descripcion: "+descripcion;
         string+= " Fecha de Caducidad: "+fechaCaducidad+" Tipo de Producto: "+tipoProducto;
-        string+= " Almacen: "+almacen;
+        string+= " Almacen: "+almacen.toString();
         return string;
     }
 
