@@ -1,6 +1,8 @@
 package Modelos;
 
 import java.time.LocalDate;
+import java.lang.String;
+import java.util.Objects;
 
 public class Producto {
     private int identificador;
@@ -9,4 +11,91 @@ public class Producto {
     private LocalDate fechaCaducidad;
     private TipoProducto tipoProducto;
     private Almacen almacen;
+
+    public Producto(){}
+    public Producto(int identificador, String codigo,String descripcion,LocalDate fechaCaducidad,TipoProducto tipoProducto,Almacen almacen){
+        this.identificador = identificador;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.fechaCaducidad = fechaCaducidad;
+        this.tipoProducto = tipoProducto;
+        this.almacen = almacen;
+    }
+    public Producto(Producto p1){
+        this.identificador = p1.getIdentificador();
+        this.codigo = p1.getCodigo();
+        this.descripcion = p1.getDescripcion();
+        this.fechaCaducidad = p1.getFechaCaducidad();
+        this.tipoProducto = p1.getTipoProducto();
+        this.almacen = p1.getAlmacen();
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public LocalDate getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public TipoProducto getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public void setTipoProducto(TipoProducto tipoProducto) {
+        this.tipoProducto = tipoProducto;
+    }
+
+    public Almacen getAlmacen() {
+        return almacen;
+    }
+
+    public void setAlmacen(Almacen almacen) {
+        this.almacen = almacen;
+    }
+
+    public String toString(){
+        String string = "";
+        string+= "Identificador: "+identificador+" Codigo: "+codigo+" Descripcion: "+descripcion;
+        string+= " Fecha de Caducidad: "+fechaCaducidad+" Tipo de Producto: "+tipoProducto;
+        string+= " Almacen: "+almacen;
+        return string;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Producto producto = (Producto) o;
+        return identificador == producto.identificador && Objects.equals(codigo, producto.codigo) && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fechaCaducidad, producto.fechaCaducidad) && tipoProducto == producto.tipoProducto && Objects.equals(almacen, producto.almacen);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(identificador, codigo, descripcion, fechaCaducidad, tipoProducto, almacen);
+    }
 }
