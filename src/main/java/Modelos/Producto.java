@@ -11,6 +11,7 @@ public class Producto {
     private LocalDate fechaCaducidad;
     private TipoProducto tipoProducto;
     private Almacen almacen;
+    private double precio;
 
     public Producto(){}
     public Producto(int identificador, String codigo,String descripcion,LocalDate fechaCaducidad,TipoProducto tipoProducto,Almacen almacen){
@@ -78,11 +79,19 @@ public class Producto {
         this.almacen = almacen;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public String toString(){
         String string = "";
         string+= "Identificador: "+identificador+" Codigo: "+codigo+" Descripcion: "+descripcion;
         string+= " Fecha de Caducidad: "+fechaCaducidad+" Tipo de Producto: "+tipoProducto;
-        string+= " Almacen: "+almacen.toString();
+        string+= " Almacen: "+almacen.toString()+"Precio"+precio;
         return string;
     }
 
