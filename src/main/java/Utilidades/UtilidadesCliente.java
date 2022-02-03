@@ -3,6 +3,7 @@ package Utilidades;
 import Modelos.Cliente;
 
 public class UtilidadesCliente {
+    UtilidadesCliente(){}
 
     public boolean esDniValido(Cliente cliente){
         int validar;

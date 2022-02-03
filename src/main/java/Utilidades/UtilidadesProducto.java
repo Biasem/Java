@@ -9,6 +9,9 @@ import java.util.List;
 
 
 public class UtilidadesProducto {
+
+    UtilidadesProducto(){}
+
     public List<Producto> getPorTipo(List<Producto> productos, TipoProducto tipo){
         List<Producto> lista = new ArrayList<>();
         for (Producto i:productos){
