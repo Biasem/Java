@@ -24,7 +24,7 @@ public class UtilidadesProducto {
     public List<Producto> getPorAlmacen(List<Producto> productos, Almacen almacen){
         List<Producto> lista = new ArrayList<>();
         for (Producto i:productos){
-            if(i.getTipoProducto().equals(almacen)){
+            if(i.getAlmacen().equals(almacen)){
                 lista.add(i);
             }
         }
