@@ -60,7 +60,12 @@ public class UtilidadesEmpresa {
         return empleado;
     }
 
-    //public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresas{})//mapa de los empleados por contrato
+    public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresas){ //mapa de los empleados por contrato
+
+    }
+
+
+
 
     //public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){}
 
