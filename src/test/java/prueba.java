@@ -1,3 +1,5 @@
+import Modelos.Empleado;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,18 +18,20 @@ public class prueba {
 
         }
 
-        List<Numeros> lista2= lista.stream().filter(n->n.getNumero()>50).collect(Collectors.toList());
-        Collections.sort(lista2);
+        List<Numeros> lista2 = lista.stream().filter(n->n.getNumero()>50).collect(Collectors.toList());
+        lista2.sort(Comparator.comparing(Numeros::getNumero));
 
-        for(int i=0; i<lista2.size();i++){
+        /*for(int i=0; i<lista2.size();i++){
 
-            lista2.get(i).getNumero();
+            System.out.println(lista2.get(i).getNumero());
         }
 
         System.out.println("////////////////////////////////////");
         for (Numeros num:lista){
             System.out.println(num.getNumero());
-        }
+        }*/
+        Empleado j = new Empleado();
+        System.out.println(j);
     }
     static class Numeros{
 
