@@ -57,6 +57,8 @@ public class Empresa {
         this.tipoEmpresa = tipoEmpresa;
     }
 
+
+
     @Override
     public String toString() {
         return "Empresa{" +

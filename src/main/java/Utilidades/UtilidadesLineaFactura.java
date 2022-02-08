@@ -2,7 +2,7 @@ package Utilidades;
 
 
 public class UtilidadesLineaFactura {
-    UtilidadesLineaFactura(){}
+    public UtilidadesLineaFactura(){}
 
 
 }

@@ -1,5 +1,5 @@
 package Utilidades;
 
 public class UtilidadesAlmacen {
-    UtilidadesAlmacen(){}
+   public UtilidadesAlmacen(){}
 }

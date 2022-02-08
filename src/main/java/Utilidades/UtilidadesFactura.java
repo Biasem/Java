@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class UtilidadesFactura {
 
-    UtilidadesFactura(){}
+    public UtilidadesFactura(){}
 
     public boolean esFacturaVencida(Factura factura) {
         if (factura.getFechaVencimiento().isAfter(LocalDate.now()) == true) {

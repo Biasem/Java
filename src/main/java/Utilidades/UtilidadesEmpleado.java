@@ -1,5 +1,5 @@
 package Utilidades;
 
 public class UtilidadesEmpleado {
-    UtilidadesEmpleado(){}
+    public UtilidadesEmpleado(){}
 }

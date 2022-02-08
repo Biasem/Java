@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class UtilidadesEmpresa {
 
 
-    UtilidadesEmpresa(){}
+    public UtilidadesEmpresa(){}
 
     public List<Empleado> getEmpleadosPorContrato(Empresa empresa, TipoContrato tipoContrato){
 
@@ -62,7 +62,6 @@ public class UtilidadesEmpresa {
        return empresa.getEmpleados().stream().collect(Collectors.groupingBy(e -> e.getContrato().getTipoContrato()));
 
     }
-
 
     public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
 
