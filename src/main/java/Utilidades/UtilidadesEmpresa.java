@@ -5,10 +5,7 @@ import Modelos.Empleado;
 import Modelos.Empresa;
 import Modelos.TipoContrato;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class UtilidadesEmpresa {
@@ -60,14 +57,20 @@ public class UtilidadesEmpresa {
         return empleado;
     }
 
-    public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresas){ //mapa de los empleados por contrato
+    public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresa){ //mapa de los empleados por contrato
 
+        Map<TipoContrato,List<Empleado>> mapa = empresa.getEmpleados().stream().collect(Collectors.groupingBy(e -> e.getContrato().getTipoContrato()));
+        return mapa;
     }
 
 
+    public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
 
+        Map<TipoContrato,List<Empleado>> mapa = getEmpleadosPorTipoContrato(empresas.get(0));
 
-    //public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){}
+        Map<Empresa,Map<TipoContrato,List<Empleado>>> mapa2 = empresas.stream().collect(Collectors.groupingBy(e->e.getEmpleados().stream()))
+        return mapa2;
+    }
 
 
 }
