@@ -3,11 +3,13 @@ import Utilidades.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class bbdd {
 
     public static void main(String[] args) {
         UtilidadesEmpresa  ue = new UtilidadesEmpresa();
+
 
         Contrato c1 = new Contrato(1,1000,TipoContrato.INDEFINIDO);
         Contrato c2 = new Contrato(2,500,TipoContrato.PRACTICAS);
@@ -34,9 +36,8 @@ public class bbdd {
 
         e1.setEmpleados(lem);
 
-
-
-        ue.fondoSalarialEmpresa(e1);
+      //ue.getEmpleadosPorContrato(e1,TipoContrato.INDEFINIDO);
+    e1.toString();
 
 
     }

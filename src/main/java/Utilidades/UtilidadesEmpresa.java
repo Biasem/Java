@@ -14,8 +14,15 @@ public class UtilidadesEmpresa {
     public UtilidadesEmpresa(){}
 
     public List<Empleado> getEmpleadosPorContrato(Empresa empresa, TipoContrato tipoContrato){
+        List<Empleado> lista= new ArrayList<>();
+        for (Empleado empleado:empresa.getEmpleados()){
+            if(empleado.getContrato().getTipoContrato()== tipoContrato){
+                lista.add(empleado);
+            }
+        }
 
-        return empresa.getEmpleados().stream().filter(e-> e.getContrato().getTipoContrato().equals(tipoContrato)).collect(Collectors.toList());
+        return lista;
+        //return empresa.getEmpleados().stream().filter(e-> e.getContrato().getTipoContrato().equals(tipoContrato)).collect(Collectors.toList());
     }
 
     public List<Empleado>getMileuristasOrdenadosPorSalario(Empresa empresa){
