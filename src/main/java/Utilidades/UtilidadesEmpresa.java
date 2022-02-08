@@ -46,10 +46,10 @@ public class UtilidadesEmpresa {
 
         for (Empresa j:empresas){
             for (Empleado i:j.getEmpleados()){
-                if(i.getContrato().getSalarioBase()>empleado.getContrato().getSalarioBase()){
+                if(empleado.getContrato()==null){
                     empleado=i;
                 }
-                if(empleado.getContrato()==null){
+                if(i.getContrato().getSalarioBase()>empleado.getContrato().getSalarioBase()){
                     empleado=i;
                 }
             }
