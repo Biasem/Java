@@ -13,6 +13,9 @@ public class bbdd {
         UtilidadesCliente utilidadesCliente = new UtilidadesCliente();
 
         List<Empleado> listaempleados = new ArrayList<>();
+        List<Empleado> listaempleados2 = new ArrayList<>();
+        List<Empleado> listaempleados3 = new ArrayList<>();
+
         List<Cliente> listaclientes = new ArrayList<>();
         List<Almacen> listaalmacenes = new ArrayList<>();
         List<Producto> listaproductos = new ArrayList<>();
@@ -48,21 +51,27 @@ public class bbdd {
         Empleado empleado3 = new Empleado(3,"2342323H","jose","jimenez","cantera 3","345334123",empresa1,contrato3);
         Empleado empleado4 = new Empleado(4,"2342323H","joselito","jimenez","cantera 3","345334123",empresa1,contrato4);
         Empleado empleado5 = new Empleado(5,"2342323H","pepe","jimenez","cantera 3","345334123",empresa1,contrato5);
+        Empleado empleado6 = new Empleado(6,"2342323H","pepe","jimenez","cantera 3","345334123",empresa2,contrato1);
+        Empleado empleado7 = new Empleado(7,"2342323H","pepe","jimenez","cantera 3","345334123",empresa3,contrato1);
         listaempleados.add(empleado1);
         listaempleados.add(empleado2);
         listaempleados.add(empleado3);
         listaempleados.add(empleado4);
         listaempleados.add(empleado5);
+        listaempleados2.add(empleado6);
+        listaempleados3.add(empleado7);
 
         empresa1.setEmpleados(listaempleados);
-
+        empresa2.setEmpleados(listaempleados2);
+        empresa3.setEmpleados(listaempleados3);
 
         //Utilidades empresa funciona
         // System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
         //System.out.println(utilidadesEmpresa.getMileuristasOrdenadosPorSalario(empresa1));
         //System.out.println(utilidadesEmpresa.fondoSalarialEmpresa(empresa1));
-        System.out.println(utilidadesEmpresa.getMejorPagado(listaempresas));
-
+        //System.out.println(utilidadesEmpresa.getMejorPagado(listaempresas));
+        //System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(empresa1));
+        System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
 
         //Utilidades Cliente
         //System.out.println(utilidadesCliente.esDniValido(cliente2));

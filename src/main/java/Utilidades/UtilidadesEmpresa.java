@@ -50,16 +50,13 @@ public class UtilidadesEmpresa {
     public Empleado getMejorPagado(List<Empresa> empresas){ //devuelve empleado que mas cobra
         Empleado empleado = new Empleado();
 
-
         for (Empresa j:empresas){
             if (j.getEmpleados()==null){
                 continue;
             }
             for (Empleado i:j.getEmpleados()){
-
                 if(empleado.getContrato()==null){
                     empleado=i;
-
                 }
                 if(i.getContrato().getSalarioBase()>empleado.getContrato().getSalarioBase()){
                     empleado=i;

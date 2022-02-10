@@ -109,7 +109,7 @@ public class Empleado {
                 ", apellidos='" + apellidos + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", numTelefono='" + numTelefono + '\'' +
-                ", empresa=" + empresa +
+                //", empresa=" + empresa +
                 ", contrato=" + contrato +
                 '}';
     }
