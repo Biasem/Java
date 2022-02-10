@@ -9,10 +9,8 @@ public class UtilidadesCliente {
         int validar;
         String dni = cliente.getDni();
         String dni1 = dni.substring(0,8);
-        System.out.println(dni1);
         String dni2 = dni.substring(8);
-        System.out.println(dni2);
-        System.out.println(dni.length());
+
         if (dni.length()!= 9){
             return false;
         }

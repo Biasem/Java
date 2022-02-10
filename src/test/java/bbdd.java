@@ -60,7 +60,7 @@ public class bbdd {
         //Utilidades empresa funciona System.out.println(utilidadesEmpresae.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
         //Utilidades Cliente
 
-        System.out.println(utilidadesCliente.esDniValido(cliente1));
+        System.out.println(utilidadesCliente.esDniValido(cliente2));
 
 
 
