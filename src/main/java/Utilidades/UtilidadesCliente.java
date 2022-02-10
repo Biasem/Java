@@ -9,8 +9,19 @@ public class UtilidadesCliente {
         int validar;
         String dni = cliente.getDni();
         String dni1 = dni.substring(0,8);
+        System.out.println(dni1);
         String dni2 = dni.substring(8);
+        System.out.println(dni2);
+        System.out.println(dni.length());
         if (dni.length()!= 9){
+            return false;
+        }
+        try{
+            validar = Integer.parseInt(dni2);
+        }catch (NumberFormatException e){
+            validar =-1;
+        }
+        if(validar>=0){
             return false;
         }
         try{
@@ -27,9 +38,10 @@ public class UtilidadesCliente {
             validar =-1;
         }
         if(validar>=0){
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }
     }
 }
+//str.matches("[+-]?\\d*(\\.\\d+)?");
