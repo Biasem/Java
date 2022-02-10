@@ -20,7 +20,6 @@ public class UtilidadesEmpresa {
                 lista.add(empleado);
             }
         }
-
         return lista;*/
         return empresa.getEmpleados().stream().filter(e-> e.getContrato().getTipoContrato().equals(tipoContrato)).collect(Collectors.toList());
     }
@@ -28,7 +27,7 @@ public class UtilidadesEmpresa {
     public List<Empleado>getMileuristasOrdenadosPorSalario(Empresa empresa){
 
         Empleado aux;
-        List<Empleado> lista = empresa.getEmpleados().stream().filter(e->e.getContrato().getSalarioBase()>1000).collect(Collectors.toList());
+        List<Empleado> lista = empresa.getEmpleados().stream().filter(e->e.getContrato().getSalarioBase()>=1000).collect(Collectors.toList());
         for (int i=0;i<lista.size()-1;i++){
             if(lista.get(i).getContrato().getSalarioBase()<lista.get(i+1).getContrato().getSalarioBase()){
                 aux=lista.get(i+1);
@@ -51,10 +50,16 @@ public class UtilidadesEmpresa {
     public Empleado getMejorPagado(List<Empresa> empresas){ //devuelve empleado que mas cobra
         Empleado empleado = new Empleado();
 
+
         for (Empresa j:empresas){
+            if (j.getEmpleados()==null){
+                continue;
+            }
             for (Empleado i:j.getEmpleados()){
+
                 if(empleado.getContrato()==null){
                     empleado=i;
+
                 }
                 if(i.getContrato().getSalarioBase()>empleado.getContrato().getSalarioBase()){
                     empleado=i;

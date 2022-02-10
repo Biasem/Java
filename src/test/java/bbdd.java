@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class bbdd {
 
     public static void main(String[] args) {
-        UtilidadesEmpresa  utilidadesEmpresae = new UtilidadesEmpresa();
+        UtilidadesEmpresa  utilidadesEmpresa = new UtilidadesEmpresa();
         UtilidadesCliente utilidadesCliente = new UtilidadesCliente();
 
         List<Empleado> listaempleados = new ArrayList<>();
@@ -58,7 +58,11 @@ public class bbdd {
 
 
         //Utilidades empresa funciona
-        // System.out.println(utilidadesEmpresae.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
+        // System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
+        //System.out.println(utilidadesEmpresa.getMileuristasOrdenadosPorSalario(empresa1));
+        //System.out.println(utilidadesEmpresa.fondoSalarialEmpresa(empresa1));
+        System.out.println(utilidadesEmpresa.getMejorPagado(listaempresas));
+
 
         //Utilidades Cliente
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
