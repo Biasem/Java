@@ -14,13 +14,14 @@ public class Producto {
     private double precio;
 
     public Producto(){}
-    public Producto(int identificador, String codigo,String descripcion,LocalDate fechaCaducidad,TipoProducto tipoProducto,Almacen almacen){
+    public Producto(int identificador, String codigo,String descripcion,LocalDate fechaCaducidad,TipoProducto tipoProducto,Almacen almacen,double precio){
         this.identificador = identificador;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fechaCaducidad = fechaCaducidad;
         this.tipoProducto = tipoProducto;
         this.almacen = almacen;
+        this.precio = precio;
     }
     public Producto(Producto p1){
         this.identificador = p1.getIdentificador();
@@ -29,6 +30,7 @@ public class Producto {
         this.fechaCaducidad = p1.getFechaCaducidad();
         this.tipoProducto = p1.getTipoProducto();
         this.almacen = p1.getAlmacen();
+        this.precio = p1.getPrecio();
     }
 
     public int getIdentificador() {
@@ -91,7 +93,7 @@ public class Producto {
         String string = "";
         string+= "Identificador: "+identificador+" Codigo: "+codigo+" Descripcion: "+descripcion;
         string+= " Fecha de Caducidad: "+fechaCaducidad+" Tipo de Producto: "+tipoProducto;
-        string+= " Almacen: "+almacen.toString()+"Precio"+precio;
+        string+= /*" Almacen: "+almacen.toString()+ */ " Precio: "+precio;
         return string;
     }
 

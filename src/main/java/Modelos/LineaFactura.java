@@ -39,9 +39,14 @@ public class LineaFactura {
         this.producto = producto;
     }
 
-    public String toString(){
-        String string ="";
-        return string;
+    @Override
+    public String toString() {
+        return "LineaFactura{" +
+                "identificador=" + identificador +
+                ", cantidad=" + cantidad +
+                //", factura=" + factura +
+                //", producto=" + producto +
+                '}';
     }
 
     @Override

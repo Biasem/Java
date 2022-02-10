@@ -101,9 +101,21 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public String toString(){
-        String string ="";
-        return string;
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "identificador=" + identificador +
+                ", codigoFactura='" + codigoFactura + '\'' +
+                ", importeBase=" + importeBase +
+                ", descuento=" + descuento +
+                ", iva=" + iva +
+                ", totalAPagar=" + totalAPagar +
+                ", fechaEmision=" + fechaEmision +
+                ", fechaVencimiento=" + fechaVencimiento +
+                ", pagada=" + pagada +
+                //", lineaFacturas=" + lineaFacturas +
+                ", cliente=" + cliente +
+                '}';
     }
 
     @Override
