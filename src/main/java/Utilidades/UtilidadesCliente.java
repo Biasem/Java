@@ -8,12 +8,13 @@ public class UtilidadesCliente {
     public boolean esDniValido(Cliente cliente){
         int validar;
         String dni = cliente.getDni();
-        String dni1 = dni.substring(0,8);
-        String dni2 = dni.substring(8);
 
         if (dni.length()!= 9){
             return false;
         }
+
+        String dni1 = dni.substring(0,8);
+        String dni2 = dni.substring(8);
         try{
             validar = Integer.parseInt(dni2);
         }catch (NumberFormatException e){
