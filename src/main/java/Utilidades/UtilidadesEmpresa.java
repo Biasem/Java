@@ -1,9 +1,6 @@
 package Utilidades;
 
-import Modelos.Contrato;
-import Modelos.Empleado;
-import Modelos.Empresa;
-import Modelos.TipoContrato;
+import Modelos.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -75,9 +72,39 @@ public class UtilidadesEmpresa {
     public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
 
         return getEmpleadosPorTipoContrato(empresas);
-
     }
 
+    public List<Empleado> getEmpleadosPymePracticas(List<Empresa> empresas){
+        //devuelve lista empleados pertenecientes a pymes con contrato practica
+        List<Empleado> empleados = new ArrayList<>();
+        for(Empresa empresa:empresas){
+            for (Empleado empleado: empresa.getEmpleados()){
+                if((empleado.getContrato().getTipoContrato()==TipoContrato.PRACTICAS)&&(empleado.getEmpresa().getTipoEmpresa()== TipoEmpresa.PYME))
+                empleados.add(empleado);
+            }
+        }
+        return empleados;
+    }
+
+    public Map<Empresa,Empleado> getLosMejorPagadosPorEmrpesa (List<Empresa> empresas){
+        //mapa con el empleado que mas cobra
+
+
+        Map<Empresa,Empleado> mapa = new HashMap<>();
+        for (Empresa empresa:empresas){
+            Empleado empleado = new Empleado();
+            for (Empleado i:empresa.getEmpleados()){
+                if(empleado.getContrato()==null){
+                    empleado=i;
+                }
+                if(i.getContrato().getSalarioBase()>empleado.getContrato().getSalarioBase()){
+                    empleado=i;
+                }
+            }
+            mapa.put(empresa,empleado);
+        }
+        return mapa;
+    }
 
 }
 
