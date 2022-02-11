@@ -34,7 +34,7 @@ public class Cliente extends Persona{
         String string = "";
         string+= "Identificador: "+getIdentificador()+" DNI: "+getDni();
         string+= " Nombre: "+getNombre()+" Apellidos"+getApellidos();
-        string+= " Direccion: "+getDireccion()+"Tipo cliente"+tipoCliente;
+        string+= " Direccion: "+getDireccion()+" Tipo cliente"+tipoCliente;
         return string;
     }
 

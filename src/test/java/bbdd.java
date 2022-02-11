@@ -77,7 +77,7 @@ public class bbdd {
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
 
         // Utilidades Factura
-
+        System.out.println(cliente1);
 
     }
 
