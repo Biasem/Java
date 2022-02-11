@@ -88,8 +88,6 @@ public class UtilidadesEmpresa {
 
     public Map<Empresa,Empleado> getLosMejorPagadosPorEmrpesa (List<Empresa> empresas){
         //mapa con el empleado que mas cobra
-
-
         Map<Empresa,Empleado> mapa = new HashMap<>();
         for (Empresa empresa:empresas){
             Empleado empleado = new Empleado();

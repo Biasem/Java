@@ -11,15 +11,16 @@ public class bbdd {
     public static void main(String[] args) {
         UtilidadesEmpresa  utilidadesEmpresa = new UtilidadesEmpresa();
         UtilidadesCliente utilidadesCliente = new UtilidadesCliente();
+        UtilidadesFactura utilidadesFactura = new UtilidadesFactura();
 
         List<Empleado> listaempleados = new ArrayList<>();
         List<Empleado> listaempleados2 = new ArrayList<>();
         List<Empleado> listaempleados3 = new ArrayList<>();
-
         List<Cliente> listaclientes = new ArrayList<>();
         List<Almacen> listaalmacenes = new ArrayList<>();
         List<Producto> listaproductos = new ArrayList<>();
         List<Empresa> listaempresas = new ArrayList<>();
+        ArrayList<LineaFactura> listalineafacturas = new ArrayList<>();
 
         Cliente cliente1 = new Cliente(1,"99988877A","juan","jjj","cualquier",TipoCliente.PARTICULAR);
         Cliente cliente2 = new Cliente(2,"99988","Pedrin","iiii","cualquier",TipoCliente.PARTICULAR);
@@ -31,7 +32,6 @@ public class bbdd {
 
         Producto producto1 = new Producto(1,"P1","tomates", LocalDate.now(),TipoProducto.ALIMENTACION,almacen1,2.2);
         listaproductos.add(producto1);
-
 
         Contrato contrato1 = new Contrato(1,1000,TipoContrato.INDEFINIDO);
         Contrato contrato2 = new Contrato(2,500,TipoContrato.PRACTICAS);
@@ -65,6 +65,11 @@ public class bbdd {
         empresa2.setEmpleados(listaempleados2);
         empresa3.setEmpleados(listaempleados3);
 
+        Factura factura1 = new Factura(1,"f1",20,1.2,21.0,
+                        30,LocalDate.now(),LocalDate.now(),true,listalineafacturas,cliente1);
+        LineaFactura lineaFactura1 = new LineaFactura(1,3,factura1,producto1);
+        listalineafacturas.add(lineaFactura1);
+
         //Utilidades empresa funciona
         // System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
         //System.out.println(utilidadesEmpresa.getMileuristasOrdenadosPorSalario(empresa1));
@@ -77,7 +82,7 @@ public class bbdd {
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
 
         // Utilidades Factura
-        System.out.println(cliente1);
+
 
     }
 

@@ -7,6 +7,22 @@ public class LineaFactura {
     private Factura factura;
     private Producto producto;
 
+    public LineaFactura(int identificador, int cantidad, Factura factura, Producto producto) {
+        this.identificador = identificador;
+        this.cantidad = cantidad;
+        this.factura = factura;
+        this.producto = producto;
+    }
+
+    public LineaFactura(){}
+
+    public LineaFactura(LineaFactura lineaFactura){
+        this.identificador = lineaFactura.getIdentificador();
+        this.cantidad = lineaFactura.getCantidad();
+        this.factura = lineaFactura.getFactura();
+        this.producto = lineaFactura.getProducto();
+    }
+
     public int getIdentificador() {
         return identificador;
     }

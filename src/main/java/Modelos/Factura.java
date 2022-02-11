@@ -13,6 +13,36 @@ public class Factura {
     private ArrayList<LineaFactura> lineaFacturas;
     private Cliente cliente;
 
+    public Factura(int identificador, String codigoFactura, double importeBase, double descuento, double iva, double totalAPagar, LocalDate fechaEmision, LocalDate fechaVencimiento, boolean pagada, ArrayList<LineaFactura> lineaFacturas, Cliente cliente) {
+        this.identificador = identificador;
+        this.codigoFactura = codigoFactura;
+        this.importeBase = importeBase;
+        this.descuento = descuento;
+        this.iva = iva;
+        this.totalAPagar = totalAPagar;
+        this.fechaEmision = fechaEmision;
+        this.fechaVencimiento = fechaVencimiento;
+        this.pagada = pagada;
+        this.lineaFacturas = lineaFacturas;
+        this.cliente = cliente;
+    }
+
+    public Factura(){}
+
+    public Factura(Factura factura){
+        this.identificador = factura.getIdentificador();
+        this.codigoFactura = factura.getCodigoFactura();
+        this.importeBase = factura.getImporteBase();
+        this.descuento = factura.getDescuento();
+        this.iva = factura.getIva();
+        this.totalAPagar = factura.getTotalAPagar();
+        this.fechaEmision = factura.getFechaEmision();
+        this.fechaVencimiento = factura.getFechaVencimiento();
+        this.pagada = factura.isPagada();
+        this.lineaFacturas = factura.getLineaFacturas();
+        this.cliente = factura.getCliente();
+    }
+
     public int getIdentificador() {
         return identificador;
     }
