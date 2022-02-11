@@ -70,8 +70,11 @@ public class UtilidadesEmpresa {
     }
 
     public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
-
-        return getEmpleadosPorTipoContrato(empresas);
+        Map<Empresa,Map<TipoContrato,List<Empleado>>>  mapa = new HashMap<>();
+        for(Empresa empresa:empresas){
+            mapa.put(empresa,getEmpleadosPorTipoContrato(empresa));
+        }
+        return mapa;
     }
 
     public List<Empleado> getEmpleadosPymePracticas(List<Empresa> empresas){
