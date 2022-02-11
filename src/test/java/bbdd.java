@@ -71,11 +71,12 @@ public class bbdd {
         //System.out.println(utilidadesEmpresa.fondoSalarialEmpresa(empresa1));
         //System.out.println(utilidadesEmpresa.getMejorPagado(listaempresas));
         //System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(empresa1));
-        System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
+        // NO funciona System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
 
         //Utilidades Cliente
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
 
+        // Utilidades Factura
 
 
     }

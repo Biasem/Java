@@ -4,68 +4,23 @@ import java.util.Objects;
 import java.lang.String;
 
 
-public class Cliente {
-    private int identificador;
-    private String dni, nombre, apellidos, direccion;
+public class Cliente extends Persona{
+
     private TipoCliente tipoCliente;
 
     public Cliente(){}
     public Cliente(int identificador,String dni,String nombre,
                    String apellidos,String direccion,TipoCliente tipoCliente){
-        this.identificador = identificador;
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.direccion = direccion;
+        super(identificador,dni,nombre,apellidos,direccion);
         this.tipoCliente = tipoCliente;
     }
-    public Cliente(Cliente c1){
-        this.identificador = c1.getIdentificador();
-        this.dni = c1.getDni();
-        this.nombre = c1.getNombre();
-        this.apellidos = c1.getApellidos();
-        this.direccion = c1.getDireccion();
-        this.tipoCliente = c1.getTipoCliente();
-    }
-
-    public int getIdentificador() {
-        return identificador;
-    }
-
-    public void setIdentificador(int identificador) {
-        this.identificador = identificador;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public Cliente(Cliente cliente){
+        this.setIdentificador(cliente.getIdentificador());
+        this.setDni(cliente.getDni());
+        this.setNombre(cliente.getNombre());
+        this.setApellidos(cliente.getApellidos());
+        this.setDireccion(cliente.getDireccion());
+        this.tipoCliente = cliente.getTipoCliente();
     }
 
     public TipoCliente getTipoCliente() {
@@ -77,9 +32,9 @@ public class Cliente {
     }
     public String toString(){
         String string = "";
-        string+= "Identificador: "+identificador+" DNI: "+dni;
-        string+= " Nombre: "+nombre+" Apellidos"+apellidos;
-        string+= " Direccion: "+direccion+"Tipo cliente"+tipoCliente;
+        string+= "Identificador: "+getIdentificador()+" DNI: "+getDni();
+        string+= " Nombre: "+getNombre()+" Apellidos"+getApellidos();
+        string+= " Direccion: "+getDireccion()+"Tipo cliente"+tipoCliente;
         return string;
     }
 
@@ -87,12 +42,13 @@ public class Cliente {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Cliente cliente = (Cliente) o;
-        return identificador == cliente.identificador && Objects.equals(dni, cliente.dni) && Objects.equals(nombre, cliente.nombre) && Objects.equals(apellidos, cliente.apellidos) && Objects.equals(direccion, cliente.direccion) && tipoCliente == cliente.tipoCliente;
+        return tipoCliente == cliente.tipoCliente;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identificador, dni, nombre, apellidos, direccion, tipoCliente);
+        return Objects.hash(super.hashCode(), tipoCliente);
     }
 }
