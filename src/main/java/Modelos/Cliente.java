@@ -9,8 +9,7 @@ public class Cliente extends Persona{
     private TipoCliente tipoCliente;
 
     public Cliente(){}
-    public Cliente(int identificador,String dni,String nombre,
-                   String apellidos,String direccion,TipoCliente tipoCliente){
+    public Cliente(int identificador,String dni,String nombre,String apellidos,String direccion,TipoCliente tipoCliente){
         super(identificador,dni,nombre,apellidos,direccion);
         this.tipoCliente = tipoCliente;
     }
