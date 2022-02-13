@@ -12,6 +12,7 @@ public class bbdd {
         UtilidadesEmpresa  utilidadesEmpresa = new UtilidadesEmpresa();
         UtilidadesCliente utilidadesCliente = new UtilidadesCliente();
         UtilidadesFactura utilidadesFactura = new UtilidadesFactura();
+        UtilidadesProducto utilidadesProducto = new UtilidadesProducto();
 
         List<Empleado> listaempleados = new ArrayList<>();
         List<Empleado> listaempleados2 = new ArrayList<>();
@@ -29,10 +30,15 @@ public class bbdd {
         listaclientes.add(cliente2);
 
         Almacen almacen1 = new Almacen(1,"Sevilla",500);
+        Almacen almacen2 = new Almacen(2,"Cordoba",500);
         listaalmacenes.add(almacen1);
 
         Producto producto1 = new Producto(1,"P1","tomates", LocalDate.now(),TipoProducto.ALIMENTACION,almacen1,2.2);
+        Producto producto2 = new Producto(2,"P2","peras", LocalDate.now(),TipoProducto.ALIMENTACION,almacen1,2.2);
+        Producto producto3 = new Producto(3,"P3","zumo", LocalDate.now(),TipoProducto.BEBIDA,almacen1,2.2);
         listaproductos.add(producto1);
+        listaproductos.add(producto2);
+        listaproductos.add(producto3);
 
         Contrato contrato1 = new Contrato(1,1000,TipoContrato.INDEFINIDO);
         Contrato contrato2 = new Contrato(2,500,TipoContrato.PRACTICAS);
@@ -95,8 +101,10 @@ public class bbdd {
         //System.out.println(utilidadesFactura.gastoTotalCliente(listafacturas,cliente1));
 
         //utilidades producto
+        //System.out.println(utilidadesProducto.getPorTipo(listaproductos,TipoProducto.ALIMENTACION));
+        //System.out.println(utilidadesProducto.getPorAlmacen(listaproductos,almacen1));
+
+
 
     }
-
-
 }
