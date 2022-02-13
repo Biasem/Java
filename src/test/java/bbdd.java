@@ -20,6 +20,7 @@ public class bbdd {
         List<Almacen> listaalmacenes = new ArrayList<>();
         List<Producto> listaproductos = new ArrayList<>();
         List<Empresa> listaempresas = new ArrayList<>();
+        List<Factura> listafacturas = new ArrayList<>();
         ArrayList<LineaFactura> listalineafacturas = new ArrayList<>();
 
         Cliente cliente1 = new Cliente(1,"99988877A","juan","jjj","cualquier",TipoCliente.PARTICULAR);
@@ -66,11 +67,17 @@ public class bbdd {
         empresa3.setEmpleados(listaempleados3);
 
         Factura factura1 = new Factura(1,"f1",20,1.2,21.0,
-                        30,LocalDate.now(),LocalDate.now(),true,listalineafacturas,cliente1);
+                        30,LocalDate.now(),LocalDate.of(2023,12,01),true,listalineafacturas,cliente1);
         LineaFactura lineaFactura1 = new LineaFactura(1,3,factura1,producto1);
+        LineaFactura lineaFactura2 = new LineaFactura(2,7,factura1,producto1);
         listalineafacturas.add(lineaFactura1);
+        listalineafacturas.add(lineaFactura2);
+        Factura factura2 = new Factura(2,"f2",20,1.2,21.0,
+                30,LocalDate.now(),LocalDate.of(2023,12,01),true,listalineafacturas,cliente1);
+        listafacturas.add(factura1);
+        listafacturas.add(factura2);
 
-        //Utilidades empresa funciona
+        //Utilidades empresa
         // System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
         //System.out.println(utilidadesEmpresa.getMileuristasOrdenadosPorSalario(empresa1));
         //System.out.println(utilidadesEmpresa.fondoSalarialEmpresa(empresa1));
@@ -82,7 +89,12 @@ public class bbdd {
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
 
         // Utilidades Factura
+        //System.out.println(utilidadesFactura.esFacturaVencida(factura1));
+        //System.out.println(utilidadesFactura.calcularBaseFactura(factura1));
+        //System.out.println(utilidadesFactura.calcularTotalAPagar(factura1));
+        //System.out.println(utilidadesFactura.gastoTotalCliente(listafacturas,cliente1));
 
+        //utilidades producto
 
     }
 
