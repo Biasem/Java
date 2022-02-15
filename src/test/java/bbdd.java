@@ -4,7 +4,6 @@ import Utilidades.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class bbdd {
 
@@ -90,7 +89,7 @@ public class bbdd {
         //System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
 
         //System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(empresa1));
-        System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
+        //System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
 
         //Utilidades Cliente
         //System.out.println(utilidadesCliente.esDniValido(cliente2));
@@ -106,6 +105,7 @@ public class bbdd {
         //System.out.println(utilidadesProducto.getPorAlmacen(listaproductos,almacen1));
 
 
-
     }
 }
+
+
