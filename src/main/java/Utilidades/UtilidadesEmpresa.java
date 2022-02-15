@@ -10,7 +10,7 @@ public class UtilidadesEmpresa {
 
     public UtilidadesEmpresa(){}
 
-    public List<Empleado> getEmpleadosPorContrato(Empresa empresa, TipoContrato tipoContrato){
+    public static List<Empleado> getEmpleadosPorContrato(Empresa empresa, TipoContrato tipoContrato){
        /* List<Empleado> lista= new ArrayList<>();
         for (Empleado empleado:empresa.getEmpleados()){
             if(empleado.getContrato().getTipoContrato()== tipoContrato){
@@ -21,7 +21,7 @@ public class UtilidadesEmpresa {
         return empresa.getEmpleados().stream().filter(e-> e.getContrato().getTipoContrato().equals(tipoContrato)).collect(Collectors.toList());
     }
 
-    public List<Empleado>getMileuristasOrdenadosPorSalario(Empresa empresa){
+    public static List<Empleado>getMileuristasOrdenadosPorSalario(Empresa empresa){
 
         Empleado aux;
         List<Empleado> lista = empresa.getEmpleados().stream().filter(e->e.getContrato().getSalarioBase()>=1000).collect(Collectors.toList());
@@ -39,12 +39,12 @@ public class UtilidadesEmpresa {
         return lista;
     }
 
-    public double fondoSalarialEmpresa(Empresa empresa){
+    public static double fondoSalarialEmpresa(Empresa empresa){
 
         return empresa.getEmpleados().stream().mapToDouble(e->e.getContrato().getSalarioBase()).sum();
     }
 
-    public Empleado getMejorPagado(List<Empresa> empresas){ //devuelve empleado que mas cobra
+    public static Empleado getMejorPagado(List<Empresa> empresas){ //devuelve empleado que mas cobra
         Empleado empleado = new Empleado();
 
         for (Empresa j:empresas){
@@ -63,12 +63,12 @@ public class UtilidadesEmpresa {
         return empleado;
     }
 
-    public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresa){ //mapa de los empleados por contrato
+    public static Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresa){ //mapa de los empleados por contrato
 
        return empresa.getEmpleados().stream().collect(Collectors.groupingBy(e -> e.getContrato().getTipoContrato()));
     }
 
-    public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
+    public static Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){
         Map<Empresa,Map<TipoContrato,List<Empleado>>>  mapa = new HashMap<>();
         for(Empresa empresa:empresas){
             mapa.put(empresa,getEmpleadosPorTipoContrato(empresa));
@@ -76,7 +76,7 @@ public class UtilidadesEmpresa {
         return mapa;
     }
 
-    public List<Empleado> getEmpleadosPymePracticas(List<Empresa> empresas){
+    public static List<Empleado> getEmpleadosPymePracticas(List<Empresa> empresas){
         //devuelve lista empleados pertenecientes a pymes con contrato practica
         List<Empleado> empleados = new ArrayList<>();
         for(Empresa empresa:empresas){
@@ -88,7 +88,7 @@ public class UtilidadesEmpresa {
         return empleados;
     }
 
-    public Map<Empresa,Empleado> getLosMejorPagadosPorEmrpesa (List<Empresa> empresas){
+    public static Map<Empresa,Empleado> getLosMejorPagadosPorEmrpesa (List<Empresa> empresas){
         //mapa con el empleado que mas cobra
         Map<Empresa,Empleado> mapa = new HashMap<>();
         for (Empresa empresa:empresas){

@@ -3,9 +3,9 @@ package Utilidades;
 import Modelos.Cliente;
 
 public class UtilidadesCliente {
-   public UtilidadesCliente(){}
 
-    public boolean esDniValido(Cliente cliente){
+
+    public static boolean esDniValido(Cliente cliente){
         int validar;
         String dni = cliente.getDni();
 
