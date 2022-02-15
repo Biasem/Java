@@ -84,12 +84,13 @@ public class bbdd {
         listafacturas.add(factura2);
 
         //Utilidades empresa
-        // System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
         //System.out.println(utilidadesEmpresa.getMileuristasOrdenadosPorSalario(empresa1));
         //System.out.println(utilidadesEmpresa.fondoSalarialEmpresa(empresa1));
         //System.out.println(utilidadesEmpresa.getMejorPagado(listaempresas));
+        //System.out.println(utilidadesEmpresa.getEmpleadosPorContrato(empresa1,TipoContrato.INDEFINIDO));
+
         //System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(empresa1));
-        // error stack overflow System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
+        System.out.println(utilidadesEmpresa.getEmpleadosPorTipoContrato(listaempresas));
 
         //Utilidades Cliente
         //System.out.println(utilidadesCliente.esDniValido(cliente2));

@@ -66,7 +66,6 @@ public class UtilidadesEmpresa {
     public Map<TipoContrato,List<Empleado>> getEmpleadosPorTipoContrato(Empresa empresa){ //mapa de los empleados por contrato
 
        return empresa.getEmpleados().stream().collect(Collectors.groupingBy(e -> e.getContrato().getTipoContrato()));
-
     }
 
     public Map<Empresa,Map<TipoContrato,List<Empleado>>> getEmpleadosPorTipoContrato(List<Empresa> empresas){

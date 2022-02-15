@@ -60,7 +60,7 @@ public class Empleado extends Persona{
                 ", apellidos='" + getApellidos() + '\'' +
                 ", direccion='" + getDireccion() + '\'' +
                 ", numTelefono='" + numTelefono + '\'' +
-                //", empresa=" + empresa +
+               // ", empresa=" + empresa +
                 ", contrato=" + contrato +
                 '}';
     }
@@ -76,6 +76,6 @@ public class Empleado extends Persona{
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), numTelefono, empresa, contrato);
+        return Objects.hash(super.hashCode(), numTelefono, contrato);
     }
 }
